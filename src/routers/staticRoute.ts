@@ -34,12 +34,16 @@ const staticRoute = [
     {
         path: '/home',
         component: () => import(/* webpackChunkName: 'home' */ '@/views/Home.vue'),
-        // children: [
-        //     {
-        //         path: '',
-        //         component: () => import(/* webpackChunkName: 'home' */ '../view/home'),
-        //     }
-        // ]
+        children: [
+            {
+                path: '',
+                component: () => import(/* webpackChunkName: 'home' */ '@/views/Home.vue'),
+            },
+            {
+                path: 'music',
+                component: () => import(/* webpackChunkName: 'home' */ '@/views/Music.vue'),
+            }
+        ]
     },
     // {
     //     path: '/components',
