@@ -26,7 +26,13 @@ import TheNav from "@/components/TheNav.vue"; // @ is an alias to /src
     HelloWorld,TheHeader,TheNav
   }
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  private open: boolean = false
+  handleOpen() {
+      this.open = !this.open
+      console.log(this.open)
+  }
+}
 </script>
 <style scoped lang="scss">
 
